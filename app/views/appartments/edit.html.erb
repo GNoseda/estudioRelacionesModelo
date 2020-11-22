@@ -1,0 +1,5 @@
+<h1>New Apartment</h1>
+<%= render 'form', apartment: @apartment %>
+
+<%= link_to "Show", building_appartment_path(@building, @appartment)%> <!-- ahora debe apuntar a un path en específico, el del id_building correspondiente--> 
+<%= link_to "Back", building_appartments_path(@building)%> <!-- ahora debe apuntar a un path en específico, el del id_building correspondiente-->

@@ -1,0 +1,21 @@
+<%= form_with(model: [@building, @appartment], local: true) do |form| %>
+    <% if @appartment.errors.any? %>
+        <div id="error_explanation">
+            <h2> <%= pluralize(@appartment.errors.count, "error")%>  prohibited this apartment from being saved</h2>
+            <ul>
+                <% @appartment.errors.full_messages.each do |err| %>
+                    <li> <%= err %> </li>
+                <%end%>
+            </ul>
+        </div>
+    <%end%>
+
+    <div class="field">
+        <%= form.label :number%>
+        <%= form.text_field :number%>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<%end%>
